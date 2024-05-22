@@ -87,6 +87,10 @@ H.loaded_filetype = {}
 
 ---@param filetype string
 H.load_snippets_for_filetype = function(filetype)
+  if vim.tbl_contains(Tesoura.config.ignored_filetypes, filetype) then
+    H.loaded_filetype[filetype] = true
+  end
+
   local global_snippets = Tesoura.config.snippets['*'] or {}
   local filetype_snippets = Tesoura.config.snippets[filetype] or {}
   local snippets = vim.tbl_extend('force', global_snippets, filetype_snippets)
