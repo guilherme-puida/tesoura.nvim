@@ -3,6 +3,9 @@
 **tesoura.nvim** is a snippet management plugin using the new native snippet
 api (`:h vim.snippet`).
 
+> [!CAUTION]
+> This plugin is not stable, and the API could change significantly.
+
 ## Features
 
 - Configure snippets using plain Lua tables.
